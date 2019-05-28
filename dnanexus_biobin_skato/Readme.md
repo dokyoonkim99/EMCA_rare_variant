@@ -1,4 +1,8 @@
-# Biobin
+# DNAnexus app source to run BioBin
+
+Dnanexus (https://www.dnanexus.com/) is a cloud computing platform. This code is a wrapper around the BioBin app so that it can be run on the DNAnexus cloud platform.
+
+# BioBin
 
 ## What does this app do?
 This app runs the BioBin software, which is a comprehensive bioinformatics tool for biologically-driven binning and association analysis of rare variants (RVs) in sequence data. It automates multi-level binning or collapsing of RVs into biological features such as genes, pathways, regulatory regions, evolutionary conserved regions (ECRs), and many others. BioBin improves on other variant binning algorithms through the use of prior biological information, which can highlight the potential cumulative effects of biologically aggregated RVs. BioBin requires the Library of Knowledge Integration (LOKI), which contains diverse biological knowledge from multiple collections of publically available databases. 
