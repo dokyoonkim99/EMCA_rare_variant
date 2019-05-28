@@ -1,0 +1,180 @@
+{
+  "name": "biobin_skato",
+  "title": "BioBin - SKATO",
+  "summary": "The latest development version of the rare variant binning tool BioBin",
+  "dxapi": "1.0.0",
+  "version": "0.4.0",
+  "categories": [],
+  "access": {
+    "network": [ "*" ],
+    "allProjects": "VIEW"
+  },
+  "inputSpec": [
+    {
+      "name": "vcf_file",
+      "label": "VCF File",
+      "class": "file",
+      "optional": false,
+      "patterns": ["*.vcf","*.vcf.gz"]
+    },
+    {
+      "name": "vcf_tbi_file",
+      "label": "VCF TBI Index File",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.vcf.tbi","*.vcf.gz.tbi"]
+    },
+    {
+      "name": "role_file",
+      "label": "Role File",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.rol*"]
+    },
+    {
+      "name": "phenotype_file",
+      "label": "Phenotype File",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.phe*"]
+    },
+    {
+      "name": "covariate_file",
+      "label": "Covariate File",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.cov*"]
+    },
+    {
+      "name": "weight_file",
+      "label": "Weight File",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.weight*","*.wgt*"]
+    },
+    {
+      "name": "region_file",
+      "label": "Custom Regions File",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.region*","*.rgn*"]
+    },
+    {
+      "name": "include_region_file",
+      "label": "Region Names List",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.gen*"]
+    },
+    {
+      "name": "biobin_summary_script",
+      "label": "BioBin Summary Script",
+      "help": "If omitted, the latest available script will be used.",
+      "class": "file",
+      "optional": true,
+      "patterns": ["biobin-summary.py*"],
+      "suggestions": [
+        {"name": "Summary Script Versions", "project": "project-Bkp5fYQ0vqZfq1XXPkYK2p1z", "path": "/BioBin/versions/biobin-summary.py"}
+      ]
+    },
+    {
+      "name": "loki_db",
+      "label": "LOKI Knowledge Database",
+      "help": "If omitted, the latest available database will be used.",
+      "class": "file",
+      "optional": true,
+      "patterns": ["LOKI*"],
+      "suggestions": [
+        {"name": "LOKI Database Versions", "project": "project-Bkp5fYQ0vqZfq1XXPkYK2p1z", "path": "/LOKI"}
+      ]
+    },
+    {
+      "name": "regression_type",
+      "label": "Regression Type",
+      "class": "array:string",
+      "choices": ["linear","logistic","wilcoxon","SKAT-linear","SKAT-logistic","SKATO-linear","SKATO-logistic"],
+      "optional": true
+    },
+    {
+      "name": "output_prefix",
+      "label": "Output File Prefix",
+      "class": "string",
+      "default": "biobin"
+    },
+    {
+      "name": "weight_loci",
+      "label": "Type of weight",
+      "class": "string",
+      "choices": ["madsen-browning", "linear(1,25)", "no-weight"],
+      "default": "madsen-browning"
+    },
+    {
+      "name": "biobin_args",
+      "label": "BioBin Arguments",
+      "class": "string",
+      "optional": true,
+      "default": "--bin-pathways N  --bin-regions Y --bin-interregion N  --bin-minimum-size 1 --genomic-build 38"
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "log_file",
+      "label": "Log File",
+      "class": "file"
+    },
+    {
+      "name": "bins_files",
+      "label": "Bins Files",
+      "class": "array:file"
+    },
+    {
+      "name": "summary_file",
+      "label": "Bins Summary File",
+      "class": "file"
+    },
+    {
+      "name": "locus_file",
+      "label": "Locus File",
+      "class": "file"
+    },
+    {
+      "name": "unlifted_files",
+      "label": "Unlifted Variants Files",
+      "class": "array:file",
+      "optional": true
+    },
+    {
+      "name": "permu_file",
+      "label": "Permutation Summary File",
+      "class": "file",
+      "optional": true
+    }
+  ],
+  "runSpec": {
+    "distribution": "Ubuntu",
+    "release": "14.04",
+    "interpreter": "bash",
+    "file": "src/main.sh",
+    "execDepends": [
+      { "name": "libgsl0ldbl" },
+      { "name": "tabix" }
+    ]
+  },
+  "authorizedUsers": [
+    "org-geisinger",
+    "org-geisinger_affiliate"
+  ],
+  "developers": [
+    "user-auv13",
+    "user-atf3"
+  ],
+  "__disabled__runSpec__execDepends": [
+      { "name": "gawk" },
+      { "name": "libsqlite3-0" },
+      { "name": "python-apsw" },
+      { "name": "python-suds" },
+      { "name": "openjdk-7-jre-headless" },
+      { "name": "vcftools" },
+      { "name": "plink" }
+  ]
+}
