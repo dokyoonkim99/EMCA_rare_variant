@@ -2,6 +2,8 @@
 
 Dnanexus (https://www.dnanexus.com/) is a cloud computing platform. This code is a wrapper around the BioBin app so that it can be run on the DNAnexus cloud platform.
 
+Refer the totorial here https://wiki.dnanexus.com/Developer-Tutorials/Intro-to-Building-Apps to build this source code as applet/app on DNAnexus.
+
 # BioBin
 
 ## What does this app do?
