@@ -4,10 +4,6 @@ Dnanexus (https://www.dnanexus.com/) is a cloud computing platform. This code is
 
 Refer the tutorial here https://wiki.dnanexus.com/Developer-Tutorials/Intro-to-Building-Apps to build this source code as applet/app on DNAnexus.
 
-## How to run SKAT-O
-
-In this analysis we used 'SKAT-O' and weight 'madsen-browning'. Both options can be selected in the app UI.
-
 # BioBin
 
 ## What does this app do?
@@ -56,3 +52,22 @@ For a detailed description of the output files listed below, please see the soft
   - Locus file (`*locus.csv`)
   - List of unlifted variants (`*unlifted.csv`; outputted only if the VCF file used as an input is based on a different genomic build than LOKI, which is currently based on build hg38).
   - Permutation summary file (`*permute-summary.tsv`); output only when the permutation option is enabled (i.e. when the "Permutation Count" is set to > 0 in the app settings). This output file is specific to the app, it is not available in the BioBin command-line application. This file consists of 3 columns: outcome (i.e. phenotype name), bin (e.g. gene A), empirical p-value (which can be interpreted as the number of times out of X permutation runs that the permutation analysis returned a p-value that is lower or equal to the observed p-value, where the observed p-value is the p-value from the original BioBin run).
+
+## Statistical tests
+The app has options to run one of the following statistical tests:
+  - linear
+  - logistic
+  - wilcoxon
+  - SKAT-linear
+  - SKAT-logistic
+  - SKATO-linear 
+  - SKATO-logistic
+  
+Weighing options that can be selected:
+  - madsen-browning
+  - linear(1,25)
+  - no-weight
+
+## How to run SKAT-O
+
+In this analysis we used 'SKATO-logistic' and weight 'madsen-browning'. Both options can be selected in the app UI. Madsen-browning weighing is an inverse allele frequency weighting calculated as (2n+2) / sqrt(n(m+1)(2n−m+1)) where n is the total (non-missing) population, and m is the number of variants at a given locus.
