@@ -4,7 +4,7 @@ Dnanexus (https://www.dnanexus.com/) is a cloud computing platform. This code is
 
 Refer the tutorial here https://wiki.dnanexus.com/Developer-Tutorials/Intro-to-Building-Apps to build this source code as applet/app on DNAnexus.
 
-# How to run SKAT-O
+## How to run SKAT-O
 
 In this analysis we used 'SKAT-O' and weight 'madsen-browning'. Both options can be selected in the app UI.
 
