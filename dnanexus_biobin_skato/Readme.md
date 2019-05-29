@@ -4,10 +4,14 @@ Dnanexus (https://www.dnanexus.com/) is a cloud computing platform. This code is
 
 Refer the tutorial here https://wiki.dnanexus.com/Developer-Tutorials/Intro-to-Building-Apps to build this source code as applet/app on DNAnexus.
 
+# How to run SKAT-O
+
+In this analysis we used 'SKAT-O' and weight 'madsen-browning'. Both options can be selected in the app UI.
+
 # BioBin
 
 ## What does this app do?
-This app runs the BioBin software, which is a comprehensive bioinformatics tool for biologically-driven binning and association analysis of rare variants (RVs) in sequence data. It automates multi-level binning or collapsing of RVs into biological features such as genes, pathways, regulatory regions, evolutionary conserved regions (ECRs), and many others. BioBin improves on other variant binning algorithms through the use of prior biological information, which can highlight the potential cumulative effects of biologically aggregated RVs. BioBin requires the Library of Knowledge Integration (LOKI), which contains diverse biological knowledge from multiple collections of publically available databases. 
+This app runs the BioBin software, which is a comprehensive bioinformatics tool for biologically-driven binning and association analysis of rare variants (RVs) in sequence data. It automates multi-level binning or collapsing of RVs into biological features such as genes, pathways, regulatory regions, evolutionary conserved regions (ECRs), and many others. BioBin improves on other variant binning algorithms through the use of prior biological information, which can highlight the potential cumulative effects of biologically aggregated RVs. BioBin requires the Library of Knowledge Integration (LOKI), which contains diverse biological knowledge from multiple collections of publicly available databases. 
 
 ## Where can I find the BioBin software manual?
 You can find the detailed BioBin software manual here: http://www.ritchielab.com/software/biobin-download
